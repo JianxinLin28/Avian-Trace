@@ -60,7 +60,7 @@ export function createHolidayObservationsChart({ d3 = globalThis.d3, sizing = {}
     svg.append("g").attr("class","holiday-patterns__axis").attr("aria-hidden","true")
       .attr("transform","translate("+margin.left+",0)")
       .call(d3.axisLeft(y).ticks(6).tickFormat(d3.format(".3~g")));
-    svg.append("text").attr("x",margin.left+(width-margin.left-margin.right)/2).attr("y",height-14).attr("text-anchor","middle").text("Year");
+    svg.append("text").attr("x",margin.left+(width-margin.left-margin.right)/2).attr("y",height-(compact?5:14)).attr("text-anchor","middle").text("Year");
     svg.append("text").attr("transform","rotate(-90)").attr("x",-(margin.top+height-margin.bottom)/2)
       .attr("y",20).attr("text-anchor","middle").text(compact ? "Records per day" : "Average daily observation records");
     SERIES.forEach((item,index)=>{
